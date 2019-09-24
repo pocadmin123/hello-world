@@ -51,5 +51,5 @@
 
 <!-- HTML -->	
 <div class="example1">
-<h3>POC IS SUCCESSFUL & WE DEPLOYED THE APPLICATION... </h3>
+<h3>POC IS SUCCESSFUL & WE DEPLOYED  </h3>
 </div>
