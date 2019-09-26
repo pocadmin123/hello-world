@@ -1,55 +1,105 @@
 <!DOCTYPE html>
-<title>Example</title>
-
-<!-- Styles -->	
+<html lang="en">
+<head>
+<title>Webapp</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-.example1 {
- height: 50px;	
- overflow: hidden;
- position: relative;
+* {
+  box-sizing: border-box;
 }
-.example1 h3 {
- font-size: 3em;
- color: limegreen;
- position: absolute;
- width: 100%;
- height: 100%;
- margin: 0;
- line-height: 50px;
- text-align: center;
- /* Starting position */
- -moz-transform:translateX(100%);
- -webkit-transform:translateX(100%);	
- transform:translateX(100%);
- /* Apply animation to this element */	
- -moz-animation: example1 15s linear infinite;
- -webkit-animation: example1 15s linear infinite;
- animation: example1 15s linear infinite;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
 }
-/* Move it (define the animation) */
-@-moz-keyframes example1 {
- 0%   { -moz-transform: translateX(100%); }
- 100% { -moz-transform: translateX(-100%); }
+
+/* Style the header */
+header {
+  background-color: #666;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
 }
-@-webkit-keyframes example1 {
- 0%   { -webkit-transform: translateX(100%); }
- 100% { -webkit-transform: translateX(-100%); }
+
+/* Create two columns/boxes that floats next to each other */
+nav {
+  float: left;
+  width: 30%;
+  height: 300px; /* only for demonstration, should be removed */
+  background: #ccc;
+  padding: 20px;
 }
-@keyframes example1 {
- 0%   { 
- -moz-transform: translateX(100%); /* Firefox bug fix */
- -webkit-transform: translateX(100%); /* Firefox bug fix */
- transform: translateX(100%); 		
- }
- 100% { 
- -moz-transform: translateX(-100%); /* Firefox bug fix */
- -webkit-transform: translateX(-100%); /* Firefox bug fix */
- transform: translateX(-100%); 
- }
+
+/* Style the list inside the menu */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+article {
+  float: left;
+  padding: 20px;
+  width: 70%;
+  background-color: #f1f1f1;
+  height: 300px; /* only for demonstration, should be removed */
+}
+
+/* Clear floats after the columns */
+section:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the footer */
+footer {
+  background-color: #777;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+@media (max-width: 600px) {
+  nav, article {
+    width: 100%;
+    height: auto;
+  }
 }
 </style>
+</head>
+<body>
 
-<!-- HTML -->	
-<div class="example1">
-<h3>POC IS SUCCESSFUL & WE DEPLOYED  </h3>
-</div>
+<h2 style="background-color:MediumSeaGreen;">Azure Group B</h2>
+<p>Divya</p>
+<p>Sreesha</p>
+<p>Rajesh</p>
+<p>Dhanamjaya</p>
+
+<header>
+  <h2>Automation Drive POC</h2>
+</header>
+
+<section>
+  <nav>
+    <ul>
+      <li><a href="#">Jenkins</a></li>
+      <li><a href="#">Terraform</a></li>
+      <li><a href="#">Ansible</a></li>
+    </ul>
+  </nav>
+  
+  <article>
+    <h1 style="background-color:DodgerBlue;">Environment Creation </h1>
+	<h1 style="background-color:Orange;">Application Build & Deployment</h1>
+    		
+  </article>
+</section>
+
+<footer>
+  <p>Thank you :)</p>
+</footer>
+
+</body>
+</html>
